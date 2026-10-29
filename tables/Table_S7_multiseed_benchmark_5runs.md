@@ -1,0 +1,11 @@
+# Supplementary Table S7: Multi-Seed Validation Performance across 5 Independent Training Runs (K=5) and Released INT8 Model Benchmark on Locked Frozen Holdout (N=267)
+
+| Model Configuration | Role / Category | Parameters | Accuracy (%) | Precision (%) | Scam Recall (%) | Scam-F1 (%) | Model Size |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| ViSoBERT + WBCE (alpha=5.0) | Proposed (Tier 1 Edge) | 97.57M | 95.65 +/- 1.54 | 89.79 +/- 5.15 | 95.64 +/- 2.04 | 92.51 +/- 2.39 | 98.42 MB (INT8) |
+| PhoBERT-large | Baseline B2.3 (370M) | 370M | 95.95 +/- 1.57 | 93.13 +/- 3.17 | 92.33 +/- 3.44 | 92.70 +/- 2.87 | 1,480 MB |
+| FPT ViBERT-base | Baseline B2.2 | 124M | 95.04 +/- 1.11 | 90.10 +/- 4.12 | 92.60 +/- 2.84 | 91.25 +/- 1.81 | 480 MB |
+| PhoBERT-base-v2 | Baseline B2.1 | 135M | 95.11 +/- 0.83 | 91.24 +/- 1.52 | 91.23 +/- 1.84 | 91.23 +/- 1.50 | 540 MB |
+| Gemini 3.5 Flash (5-shot ICL) | Baseline B3 (Cloud API) | Proprietary | 84.50 +/- 1.02 | 64.47 +/- 1.52 | 100.00 +/- 0.00 | 78.38 +/- 1.12 | Cloud API |
+
+> **Note:** Reported F1 denotes class-specific Scam-F1. Macro-F1 across both classes for ViSoBERT is 94.51% +/- 0.96%. Holdout scam recall at theta=0.90 is exactly 72/75 = 96.00% (exact 95% Clopper-Pearson CI: [88.75%, 99.17%], 8/192 = 4.17% FPR).

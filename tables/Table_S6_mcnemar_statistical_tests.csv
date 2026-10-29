@@ -1,0 +1,8 @@
+Pairwise Comparison,b,c,chi2_cont,Exact p-value,Odds Ratio,Reject H0?
+Panel A: Tier 1 Edge vs Baselines (Frozen Holdout N=267),,,,,,
+ViSoBERT vs. PhoBERT-base-v2,10,6,0.5625,0.4545,1.67,False (p >= 0.05)
+ViSoBERT vs. FPT ViBERT-base,11,7,0.5000,0.4807,1.57,False (p >= 0.05)
+ViSoBERT vs. PhoBERT-large,7,7,0.0714,1.0000,1.00,False (p >= 0.05)
+ViSoBERT vs. Gemini 3.5 Flash,33,3,23.3611,p < 0.0001,11.00,True (p < 0.0001)
+Panel B: Tier 2 Council Ablation (Hard Forensic N=117),,,,,,
+3-Agent (Arm 2) vs. 5-Agent (Arm 1),5,0,3.2000,0.0625,inf,False (p >= 0.05)

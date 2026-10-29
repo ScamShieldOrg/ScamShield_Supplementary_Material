@@ -1,0 +1,36 @@
+{
+  "statutory_compliance": "Decree 13/2023/ND-CP (Personal Data Protection), Article 25",
+  "execution_location": "Client-Side Edge Device (Prior to external cloud transmission)",
+  "rules": [
+    {
+      "entity": "Vietnamese Mobile Phone Numbers",
+      "regex": "(?:\\+?84|0)(?:3[2-9]|5[25689]|7[06-9]|8[1-9]|9[0-9])[\\s\\.\\-]?[0-9]{3}[\\s\\.\\-]?[0-9]{4}\\b",
+      "replacement": "[PHONE_REDACTED]",
+      "description": "Standard 10-digit Vietnamese carrier prefixes with optional country code (+84/84) and separators."
+    },
+    {
+      "entity": "Bank Account and Card Numbers",
+      "regex": "(?i)\\b(?:stk|số\\s*tài\\s*khoản|so\\s*tai\\s*khoan|tài\\s*khoản|tai\\s*khoan|tk\\s*ngân\\s*hàng|tk\\s*ngan\\s*hang|so\\s*tk|card|số\\s*thẻ|so\\s*the)\\s*[:#\\-]?\\s*(\\d{8,19})\\b",
+      "replacement": "[ACCOUNT_REDACTED]",
+      "description": "8 to 19 digits preceded by account/card keywords."
+    },
+    {
+      "entity": "Citizen Identification Numbers (CCCD / CMND)",
+      "regex": "(?i)\\b(?:cccd|cmnd|cmt|căn\\s*cước|can\\s*cuoc|chứng\\s*minh(?:\\s*thư)?|chung\\s*minh(?:\\s*thu)?|định\\s*danh|dinh\\s*danh)\\s*[:#\\-]?\\s*(\\d{9}|\\d{12})\\b",
+      "replacement": "[CITIZEN_ID_REDACTED]",
+      "description": "12-digit CCCD or 9-digit CMND preceded by identity context keywords."
+    },
+    {
+      "entity": "One-Time Password (OTP) Verification Tokens",
+      "regex": "(?i)\\b(?:mã\\s*otp|ma\\s*otp|otp|mã\\s*xác\\s*thực|ma\\s*xac\\s*thuc|mã\\s*xác\\s*nhận|ma\\s*xac\\s*nhan|xác\\s*thực\\s*otp|xac\\s*thuc\\s*otp|code|mã\\s*bảo\\s*mật|ma\\s*bao\\s*mat)\\s*(?:của\\s*bạn|cua\\s*ban)?\\s*(?:là|la|:|#|-|\\s)\\s*([A-Za-z0-9]{4,8})\\b",
+      "replacement": "[OTP_REDACTED]",
+      "description": "4 to 8 alphanumeric tokens preceded by authentication keywords."
+    },
+    {
+      "entity": "Monetary Account Balance Statements",
+      "regex": "(?i)\\b(?:số\\s*dư|so\\s*du|biến\\s*động\\s*số\\s*dư|bien\\s*dong\\s*so\\s*du|giao\\s*dịch|giao\\s*dich|sodu)\\s*[:#\\-]?\\s*([+\\-]?\\s*[\\d\\.\\,]{3,15}\\s*(?:vnd|vnđ|đ|dong|đồng|usd))\\b",
+      "replacement": "[BALANCE_REDACTED]",
+      "description": "Currency figures preceded by balance change notifications."
+    }
+  ]
+}

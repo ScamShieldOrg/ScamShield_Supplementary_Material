@@ -1,0 +1,11 @@
+# Supplementary Table S4: Exploratory Routing Threshold Sensitivity Profiling Across tau in [0.70, 0.95]
+
+| Threshold tau | Accuracy (%) | Scam Recall (%) | FPR (%) | Mean Latency (ms) | Cost / 1k SMS | Escalation Rate (%) |
+| --- | --- | --- | --- | --- | --- | --- |
+| tau = 0.70 | 96.35% | 95.38% | 2.84% | 99.5 ms | $0.0023 | 0.5% |
+| tau = 0.80 | 96.61% | 95.38% | 2.37% | 162.7 ms | $0.0072 | 1.6% |
+| tau = 0.85 | 97.14% | 96.53% | 2.37% | 220.2 ms | $0.0117 | 2.6% |
+| tau = 0.90 | 97.40% | 97.11% | 2.37% | 267.5 ms | $0.0153 | 3.4% |
+| tau = 0.95 | 97.92% | 97.11% | 1.42% | 668.2 ms | $0.0410 | 9.1% |
+
+> **Note:** Evaluated across N=384 exploratory development messages (211 Ham, 173 Scam). Operating threshold tau = 0.90 was adopted as the production baseline.

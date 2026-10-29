@@ -1,0 +1,21 @@
+model_id: gemini-3.5-flash
+temperature: 0.0
+system_instruction: 'Bạn là chuyên gia phân loại tin nhắn viễn thông tại Việt Nam.
+  Phân tích nội dung và xác định tin nhắn là LỪA ĐẢO/PHISHING (1) hay TIN NHẮN THƯỜNG/HỢP
+  PHÁP (0). Chỉ trả về DUY NHẤT một số nguyên: 0 hoặc 1.'
+exemplars:
+- sms: 'Vietcombank tran trong thong bao: Tai khoan cua Quy khach bi khoa. Vui long
+    dang nhap https://vietcombankk-login.com de mo lai.'
+  label: 1
+- sms: 'So du TK 0123456789 thay doi +5,000,000 VND luc 14:30. So du hien tai: 15,250,000
+    VND.'
+  label: 0
+- sms: 'Bo Cong An thong bao: Ban co lenh bat tam giam vi lien quan duong day rua
+    tien. Goi ngay 0899123456.'
+  label: 1
+- sms: Ma xac thuc OTP cua ban tai Shopee la 849201. Ma co hieu luc trong 5 phut.
+    TUYET DOI KHONG chia se ma nay cho bat ky ai.
+  label: 0
+- sms: Chuc mung ban da trung thuong xe SH 150i tu chuong trinh tri an khach hang.
+    Lien he zalo 0912345678 de nhan thuong.
+  label: 1

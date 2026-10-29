@@ -1,0 +1,11 @@
+# Supplementary Table S5: Source Breakdown and Class Balance Across Corpus Partitions
+
+| Corpus Partition | Corpus Origin | External Feeds | Ham (y=0) | Scam (y=1) |
+| --- | --- | --- | --- | --- |
+| Training / Internal Val (N=2,397) | 2,397 (2,363 uitnlp, 34 phishing) | 0 | 1,726 (72.0%) | 671 (28.0%) |
+| Frozen Test Partition (N=267) | 267 (266 uitnlp, 1 phishing) | 0 | 192 (71.9%) | 75 (28.1%) |
+| Hard Forensic Suite (N=117) | 109 (99 train, 10 frozen test) | 8 | 19 (16.2%) | 98 (83.8%) |
+| Combined Exploratory (N=384) | 376 (with 10 duplicate strings) | 8 | 211 (54.9%) | 173 (45.1%) |
+| Total Unified Corpus (N=2,664) | 2,664 (2,629 uitnlp, 35 phishing) | 0 | 1,918 (72.0%) | 746 (28.0%) |
+
+> **Note:** Ground truth verification disclosure: upstream kappa=0.88 cited during corpus collection cannot be independently verified from contingency logs, labels treated as unverified externally.

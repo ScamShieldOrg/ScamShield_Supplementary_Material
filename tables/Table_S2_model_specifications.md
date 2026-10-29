@@ -1,0 +1,16 @@
+# Supplementary Table S2: Complete Model Specifications Across Experimental Tiers and Baseline Arms
+
+| Role / Arm | Model Identifier | Provider / Runtime | Temp. | Execution / Fallback |
+| --- | --- | --- | --- | --- |
+| Tier 1 Edge Screener | uitnlp/visobert | ONNX Runtime (CPU) | N/A | INT8 Quantized (70.7 ms) |
+| Tier 1 Baseline B2.1 | vinai/phobert-base-v2 | HuggingFace (PyTorch) | N/A | FP16 Fine-tuned |
+| Tier 1 Baseline B2.2 | FPTAI/vibert-base-cased | HuggingFace (PyTorch) | N/A | FP16 Fine-tuned |
+| Tier 1 Baseline B2.3 | vinai/phobert-large | HuggingFace (PyTorch) | N/A | FP16 Fine-tuned |
+| Tier 1 Baseline B3 | gemini-3.5-flash | Google AI Studio API | 0.0 | 5-shot ICL (4--60 s backoff) |
+| Tier 2 Maker (Seat A/B) | gpt-6.1-sol | OpenAI (via proxy) | 0.1 | Circuit breaker -> standby |
+| Tier 2 Fast (Arm 2) | gemini-3.5-flash-lite | Google AI Studio API | 0.1 | Circuit breaker -> standby |
+| Tier 2 Defender (Seat C) | gemini-3.8-flash | Google AI Studio API | 0.1 | Circuit breaker -> standby |
+| Tier 2 Baseline P-single | gpt-6.1-sol | OpenAI (via proxy) | 0.1 | Regex repair -> fallback |
+| Tier 2 Baseline PoLL | claude-sonnet-5 | Anthropic (via proxy) | 0.1 | Zero-shot unweighted vote |
+
+> **Note:** Evaluation conducted Oct 18--20, 2026. Complete API contracts and schemas archived in config/.
